@@ -1,0 +1,21 @@
+defaultAppearance = "light"
+autoSwitchAppearance = true
+enableSearch = false
+enableCodeCopy = true
+enableStructuredBreadcrumbs = false
+mainSections = []
+
+[header]
+  layout = "basic"
+  mobileMenuStyle = "dropdown"
+
+[footer]
+  showMenu = false
+  showCopyright = true
+  showThemeAttribution = true
+  showAppearanceSwitcher = true
+  showScrollToTop = true
+
+[homepage]
+  layout = "page"
+  showRecent = false

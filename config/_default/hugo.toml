@@ -1,0 +1,7 @@
+# URL GitHub Pages untuk situs ini
+baseURL = "https://malakanir.github.io/pengacak-kelompok/"
+theme = "blowfish"
+defaultContentLanguage = "en"
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false

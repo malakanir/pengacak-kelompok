@@ -1,0 +1,11 @@
+locale = "en"
+label = "English"
+weight = 1
+title = "Pengacak Kelompok"
+
+[params]
+  displayName = "English"
+  isoCode = "en"
+  rtl = false
+  dateFormat = "2 January 2006"
+  description = "Pengacak kelompok acak berbasis algoritma Fisher-Yates."
