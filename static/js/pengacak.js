@@ -36,16 +36,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     bagiKelompok(nama, mode, n).forEach((anggota, idx) => {
       const kartu = document.createElement("div");
-      kartu.style.cssText = "border:1px solid #8884;border-radius:8px;padding:12px;margin:8px 0";
-      const judul = document.createElement("strong");
-      judul.textContent = "Kelompok " + (idx + 1) + " (" + anggota.length + ")";
+      kartu.className = "pk-grup";
+      const judul = document.createElement("div");
+      judul.className = "pk-judul";
+      judul.textContent = "Kelompok " + (idx + 1);
+      const jumlah = document.createElement("span");
+      jumlah.className = "pk-jumlah";
+      jumlah.textContent = anggota.length + " orang";
       const daftar = document.createElement("ul");
+      daftar.className = "pk-anggota";
       anggota.forEach((item) => {
         const li = document.createElement("li");
         li.textContent = item;
         daftar.appendChild(li);
       });
-      kartu.append(judul, daftar);
+      kartu.append(judul, jumlah, daftar);
       hasil.appendChild(kartu);
     });
   });

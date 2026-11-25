@@ -1,0 +1,185 @@
+/* Pengacak kelompok: warna dibuat sendiri agar terbaca di mode terang maupun gelap. */
+#pk {
+  --pk-paper: #faf7f0;
+  --pk-ink: #1f1d1a;
+  --pk-muted: #6b655b;
+  --pk-line: #d8d0bf;
+  --pk-accent: #e0a02e;
+  --pk-on-accent: #1f1d1a;
+  --pk-teal: #1f6f6b;
+  --pk-danger: #b42318;
+  max-width: 40rem;
+  color: var(--pk-ink);
+  line-height: 1.5;
+}
+
+.dark #pk {
+  --pk-paper: #1c211f;
+  --pk-ink: #efe9dc;
+  --pk-muted: #a9a293;
+  --pk-line: #3a423e;
+  --pk-accent: #e8ae45;
+  --pk-on-accent: #1c211f;
+  --pk-teal: #5fb3ad;
+  --pk-danger: #ff8a7a;
+}
+
+#pk .pk-lbl {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+#pk .pk-area {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 9rem;
+  padding: 0.75rem;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--pk-ink);
+  background: var(--pk-paper);
+  border: 1px solid var(--pk-line);
+  border-radius: 6px;
+  resize: vertical;
+}
+
+#pk .pk-mode {
+  position: relative;
+  display: inline-flex;
+  gap: 3px;
+  margin: 1rem 0 0.75rem;
+  padding: 3px;
+  border: 1px solid var(--pk-line);
+  border-radius: 999px;
+}
+
+#pk .pk-mode input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#pk .pk-mode label {
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  color: var(--pk-muted);
+  cursor: pointer;
+}
+
+#pk .pk-mode:has(#pk-m1:checked) label[for="pk-m1"],
+#pk .pk-mode:has(#pk-m2:checked) label[for="pk-m2"] {
+  color: var(--pk-paper);
+  background: var(--pk-ink);
+}
+
+#pk .pk-mode:has(input:focus-visible) {
+  outline: 3px solid var(--pk-teal);
+  outline-offset: 2px;
+}
+
+#pk .pk-kalimat {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+#pk .pk-k-anggota,
+#pk:has(#pk-m2:checked) .pk-k-jumlah {
+  display: none;
+}
+
+#pk:has(#pk-m2:checked) .pk-k-anggota {
+  display: inline;
+}
+
+#pk .pk-angka {
+  width: 4.5rem;
+  padding: 0.3rem 0.4rem;
+  font: inherit;
+  font-weight: 700;
+  text-align: center;
+  color: var(--pk-ink);
+  background: var(--pk-paper);
+  border: 0;
+  border-bottom: 2px solid var(--pk-accent);
+  border-radius: 0;
+}
+
+#pk .pk-angka:focus-visible,
+#pk .pk-area:focus-visible,
+#pk .pk-tombol:focus-visible {
+  outline: 3px solid var(--pk-teal);
+  outline-offset: 2px;
+}
+
+#pk .pk-tombol {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font: inherit;
+  font-weight: 700;
+  color: var(--pk-on-accent);
+  background: var(--pk-accent);
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#pk .pk-tombol:hover {
+  filter: brightness(0.95);
+}
+
+#pk .pk-tombol:active {
+  transform: translateY(1px);
+}
+
+#pk .pk-pesan {
+  min-height: 1.5em;
+  margin: 0.75rem 0 0;
+  color: var(--pk-danger);
+}
+
+#pk .pk-hasil {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+#pk .pk-grup {
+  padding: 0.9rem 1rem;
+  background: var(--pk-paper);
+  border: 1px solid var(--pk-line);
+  border-top: 4px solid var(--pk-teal);
+  border-radius: 4px;
+}
+
+#pk .pk-judul {
+  font-weight: 700;
+}
+
+#pk .pk-jumlah {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--pk-muted);
+  font-size: 0.875rem;
+}
+
+#pk .pk-anggota {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#pk .pk-anggota li {
+  padding: 0.35rem 0;
+  border-top: 1px solid var(--pk-line);
+}
+
+#pk .pk-anggota li:first-child {
+  border-top: 0;
+}

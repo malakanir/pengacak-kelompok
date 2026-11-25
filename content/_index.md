@@ -5,16 +5,24 @@ title: "Pengacak Kelompok"
 Masukkan nama, satu per baris, lalu pilih cara membagi kelompok.
 
 <div id="pk">
-<label for="pk-nama"><strong>Daftar nama</strong> (satu per baris)</label>
-<textarea id="pk-nama" rows="8" style="width:100%"></textarea>
-<fieldset style="border:0;padding:0;margin:12px 0">
-<label><input type="radio" name="pk-mode" value="jumlah" checked> Jumlah kelompok</label>
-<label style="margin-left:12px"><input type="radio" name="pk-mode" value="anggota"> Anggota per kelompok</label>
-</fieldset>
-<input id="pk-n" type="number" min="1" value="2" style="width:6em">
-<button id="pk-acak" type="button">Acak kelompok</button>
-<p id="pk-pesan" role="alert"></p>
-<div id="pk-hasil"></div>
+<label class="pk-lbl" for="pk-nama">Daftar nama</label>
+<textarea id="pk-nama" class="pk-area" rows="8" placeholder="Andi&#10;Budi&#10;Citra"></textarea>
+<div class="pk-mode">
+<input type="radio" id="pk-m1" name="pk-mode" value="jumlah" checked>
+<label for="pk-m1">Jumlah kelompok</label>
+<input type="radio" id="pk-m2" name="pk-mode" value="anggota">
+<label for="pk-m2">Anggota per kelompok</label>
+</div>
+<div class="pk-kalimat">
+<span class="pk-k-jumlah">Bagi menjadi</span>
+<span class="pk-k-anggota">Isi tiap kelompok dengan</span>
+<input id="pk-n" class="pk-angka" type="number" min="1" value="2" aria-label="Angka">
+<span class="pk-k-jumlah">kelompok</span>
+<span class="pk-k-anggota">orang</span>
+</div>
+<button id="pk-acak" class="pk-tombol" type="button">Acak kelompok</button>
+<p id="pk-pesan" class="pk-pesan" role="alert"></p>
+<div id="pk-hasil" class="pk-hasil"></div>
 </div>
 
 <script src="js/pengacak.js"></script>
